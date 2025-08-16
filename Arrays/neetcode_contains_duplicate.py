@@ -9,7 +9,7 @@ Constraints
 """
 
 # Solution 1:
-class Solution:
+class Solution1:
     def hasDuplicate(self, nums: list[int]) -> bool:
         nums_set: set[int] = set()
         for num in nums:
@@ -22,14 +22,14 @@ class Solution:
 
         return False
 
-print(Solution().hasDuplicate(nums=[1,2,3,3]))
+print(Solution1().hasDuplicate(nums=[1,2,3,3]))
 
 
 # Solution 2:
 """
 Much more cleaner version (Easy to understand)
 """
-class Solution:
+class Solution2:
     def hasDuplicate(self, nums: list[int]) -> bool:
         nums_set = set()
         for num in nums:
@@ -40,13 +40,15 @@ class Solution:
 
         return False
 
+print(Solution2().hasDuplicate(nums=[1,2,3,3]))
+
 
 # Solution 3:
 """
 Pythonic way
 """
-class Solution:
+class Solution3:
     def hasDuplicate(self, nums: list[int]) -> bool:
         return len(nums) != len(set(nums))
 
-print(Solution().hasDuplicate(nums=[1,2,3,3]))
+print(Solution3().hasDuplicate(nums=[1,2,3,3]))

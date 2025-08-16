@@ -12,37 +12,39 @@ Constraints
 """
 More simpler and easy to understand solution
 """
-class Solution:
+class Solution1:
     def isAnagram(self, s: str, t: str) -> bool:
-        len_s = len(s)
+        len_s: int = len(s)
         if len_s != len(t):
             return False
 
-        s_hash = {}
-        t_hash = {}
+        s_hash: dict[str: int] = {}
+        t_hash: dict[str: int] = {}
         for i in range(0, len_s):
             s_hash[s[i]] = (s_hash.get(s[i]) or 0) + 1
             t_hash[t[i]] = (t_hash.get(t[i]) or 0) + 1
 
-        word_set = set(s)
+        word_set: set[str] = set(s)
         for word in word_set:
             if s_hash.get(word) != t_hash.get(word):
                 return False
 
         return True
 
+print(Solution1().isAnagram("racecar", "carrace"))
+
 
 # Solution 2:
 """
 More optimised solution where don't need to maintain two dictionaries
 """
-class Solution:
+class Solution2:
     def isAnagram(self, s: str, t: str) -> bool:
-        len_s = len(s)
+        len_s: int = len(s)
         if len_s != len(t):
             return False
 
-        counts = {}
+        counts: dict = {}
         for i in range(0, len_s):
             counts[s[i]] = (counts.get(s[i]) or 0) + 1
             counts[t[i]] = (counts.get(t[i]) or 0) - 1
@@ -52,3 +54,5 @@ class Solution:
                 return False
 
         return True
+
+print(Solution2().isAnagram("racecar", "carrace"))
