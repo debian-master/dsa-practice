@@ -1,7 +1,8 @@
 # Problem Link
 # https://neetcode.io/problems/duplicate-integer?list=neetcode150
 
-""" Constraints
+"""
+Constraints
     - is the array sorted or unsorted?
     - Any limitation on modifying the input?
     - Speed vs Memory?
