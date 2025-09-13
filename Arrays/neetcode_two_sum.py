@@ -4,7 +4,7 @@
 """
 Constraints
     - Assume Only one possible solution exists
-    - Cofirm the arrya is sorted or unsorted?
+    - Confirm the array is sorted or unsorted?
     - Is only one solution guaranteed?
     - What does it mean by `Return the answer with the smaller index first.`
 
@@ -19,7 +19,7 @@ Category
 Brute Force Solution
 """
 class Solution1:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
+    def two_sum(self, nums: list[int], target: int) -> list[int]:
         # brute force solution
         for num_i in range(len(nums)):
             for num_j in range(len(nums)):
@@ -29,7 +29,7 @@ class Solution1:
                 if (nums[num_i] + nums[num_j]) == target:
                     return [num_i, num_j]
 
-print(Solution1().twoSum([1,2,3,4,5,6], 7))
+print(Solution1().two_sum([1,2,3,4,5,6], 7))
 
 
 # Solution 2
@@ -38,7 +38,7 @@ This solution is workable but Dict will always store last element of repeated nu
 Still uses two loops but more optimised than first solution.
 """
 class Solution2:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
+    def two_sum(self, nums: list[int], target: int) -> list[int]:
         num_len = len(nums)
         num_mapper = {
             nums[num_i]: num_i for num_i in range(num_len)
@@ -52,7 +52,7 @@ class Solution2:
             ):
                 return [num_i, remaining_index]
 
-print(Solution2().twoSum([1,2,3,4,5,6], 7))
+print(Solution2().two_sum([1,2,3,4,5,6], 7))
 
 
 # Solution 3
@@ -60,7 +60,7 @@ print(Solution2().twoSum([1,2,3,4,5,6], 7))
 Optimised solution for this problem, One Pass solution
 """
 class Solution3:
-    def twoSum(self, nums: list[int], target: int) -> list[int]:
+    def two_sum(self, nums: list[int], target: int) -> list[int]:
         num_mapper = {}
         for i, num in enumerate(nums):
             remaining = target - num
@@ -69,4 +69,4 @@ class Solution3:
 
             num_mapper[num] = i
 
-print(Solution3().twoSum([1,2,3,4,5,6], 7))
+print(Solution3().two_sum([1,2,3,4,5,6], 7))
